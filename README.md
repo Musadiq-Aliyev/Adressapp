@@ -4,7 +4,7 @@ Django Adressapp
 To run it on your computer 
 
 clone project 
-go to directory where you clone(download it)
+go to directory where you clone it (ex..desktop)
 
 run this command: python manage.py runserver
 
