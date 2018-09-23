@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,8 +11,8 @@
     <title>Hello, world!</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="{%url 'home' %}">Address Book</a>
+  	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="{% url 'home' %}">Address Book</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -23,16 +21,35 @@
     <ul class="navbar-nav mr-auto">
       
       <li class="nav-item">
-        <a class="nav-link" href="{%url 'add_address' %}">Add Address</a>
+        <a class="nav-link" href="{% url 'add_address' %}">Add Address</a>
       </li>
-      
      
+      
     </ul>
-   
+    
   </div>
 </nav>
-{% block content %}
-{% endblock %}
+
+	
+
+  	<br/>
+  	<div class="container">
+
+		{% if messages %}
+		  {% for message in messages %}
+		    <div class="alert alert-warning alert-dismissable" role="alert">
+		      <button class="close" data-dismiss="alert">
+		              <small><sup>x</sup></small>
+		          </button>
+		      {{ message }}
+		    </div>
+		  {% endfor%}
+
+		{% endif %}
+		
+	    {% block content %}
+		{% endblock %}
+	</div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
