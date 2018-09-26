@@ -13,6 +13,4 @@ ps..make sure you install all python and django in your computer
 Heroku:
 https://stark-lake-54927.herokuapp.com 
 
-Admin panel:
-username:musa
-pass:pass123123
+
